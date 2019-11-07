@@ -6,19 +6,22 @@ stages:
 before_script:
   - npm install
 
-build-min-code:
+build-production:
   stage: build
   script:
     - npm run build
 
-run-unit-test:
+test:
   stage: test
   script:
     - npm run test
 
 deploy-production:
   stage: deploy
-  script:
-    - npm run deploy-prod
+  environment:
+    name: production
+    url: https://h-vuttr.netlify.com
   only:
     - master
+  script:    
+    - npx netlify-cli deploy --site $NETLIFY_SITE_ID --auth $NETLIFY_AUTH_TOKEN --prod

@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { Button, Skeleton, Modal } from 'antd';
