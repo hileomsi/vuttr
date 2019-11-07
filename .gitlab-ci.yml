@@ -1,0 +1,24 @@
+image: node:10.5.0
+stages:
+  - build
+  - test
+  - deploy
+before_script:
+  - npm install
+
+build-min-code:
+  stage: build
+  script:
+    - npm run build
+
+run-unit-test:
+  stage: test
+  script:
+    - npm run test
+
+deploy-production:
+  stage: deploy
+  script:
+    - npm run deploy-prod
+  only:
+    - master
