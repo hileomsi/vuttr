@@ -29,7 +29,8 @@
     "build-storybook": "build-storybook",
     "p:component": "plop component",
     "p:container": "plop container",
-    "p:model": "plop model"
+    "p:model": "plop model",
+    "deploy": "netlify deploy --site $NETLIFY_SITE_ID --auth $NETLIFY_AUTH_TOKEN --prod"
   },
   "eslintConfig": {
     "extends": "react-app"
